@@ -7,7 +7,6 @@ class Report {
 	private int $start_memory_usage;
 	private float $end_time;
 	private int $end_memory_usage;
-	private array $all_matches;
 
 	public function set_start_time( float $time ): void {
 		$this->start_time = $time;
@@ -23,14 +22,6 @@ class Report {
 
 	public function set_end_memory_usage( int $usage ): void {
 		$this->end_memory_usage = $usage;
-	}
-
-	public function set_all_matches( array $matches ): void {
-		$this->all_matches = $matches;
-	}
-
-	public function get_all_matches():array {
-		return $this->all_matches;
 	}
 
 	public function get_execution_time_in_microseconds(): float {

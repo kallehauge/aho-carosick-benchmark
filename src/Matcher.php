@@ -35,11 +35,10 @@ class Matcher {
 		$report->set_start_time( self::get_microtime() );
 		$report->set_start_memory_usage( self::get_memory_usage() );
 
-		$all_matches = $this->strategy->match( $keywords, $text );
+		$this->strategy->match( $keywords, $text );
 
 		$report->set_end_memory_usage( self::get_memory_usage() );
 		$report->set_end_time( self::get_microtime() );
-		$report->set_all_matches( $all_matches );
 
 		return $report;
 	}

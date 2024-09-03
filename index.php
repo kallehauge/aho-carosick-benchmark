@@ -18,9 +18,7 @@ if ( $strategy === 'all' ) {
 			$reports[] = $matcher->start( KeywordsLibrary::get(), TextLibrary::get( $test_type ) );
 		}
 
-		printf( "Strategy: %s\n", $strategy_enum->value );
-		Reporter::report( $reports );
-		echo "---------------------------------------\n";
+		Reporter::report( $reports, $strategy_enum->value );
 	}
 } else {
 	$reports = [];
@@ -29,8 +27,6 @@ if ( $strategy === 'all' ) {
 		$reports[] = $matcher->start( KeywordsLibrary::get(), TextLibrary::get( $test_type ) );
 	}
 
-	printf( "Strategy: %s\n", $strategy );
-	Reporter::report( $reports );
-	echo "---------------------------------------\n";
+	Reporter::report( $reports, $strategy );
 }
 
