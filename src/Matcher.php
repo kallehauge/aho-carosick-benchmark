@@ -3,6 +3,7 @@
 namespace Kallehauge\AhoCorasick;
 
 use Kallehauge\AhoCorasick\MatchingStrategy\AhoCorasickStrategy;
+use Kallehauge\AhoCorasick\MatchingStrategy\SimpleIteratorStrategy;
 use Kallehauge\AhoCorasick\MatchingStrategy\MatchingStrategy;
 use Kallehauge\AhoCorasick\MatchingStrategy\MatchingStrategyType;
 
@@ -18,6 +19,7 @@ class Matcher {
 
 		$this->strategy = match ( $enumStrategy ) {
 			MatchingStrategyType::AHO_CORASICK => new AhoCorasickStrategy(),
+			MatchingStrategyType::SIMPLE_ITERATOR => new SimpleIteratorStrategy(),
 		};
 	}
 
