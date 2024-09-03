@@ -7,7 +7,7 @@ Theoretically the Aho-Corasick string matching algorithm should one of (or _the_
 
 ## Results
 
-If you're curious, then these were the results I got by running these on my Macbook Pro M2 Pro while having several demanding programs running meanwhile the tests ran (like my IntelliJ IDE. If you know, you know).
+If you're curious, then these were the results I got by running the test on my Macbook Pro M2 Pro while having several demanding programs running meanwhile the tests ran (like my IntelliJ IDE. If you know, you know).
 
 Both [text libraries](src/TextLibrary.php) were parsed using the same [keyword library](src/KeywordLibrary.php).
 
@@ -15,18 +15,50 @@ Both [text libraries](src/TextLibrary.php) were parsed using the same [keyword l
 
 The book is ~1.2 MB large (or in other words: 1,276,290 characters):
 
+#### Strategy: aho-corasick-position
 ```
-Peak memory usage: 4,096 KB
-Average execition time: 132.64 ms
+Average execution time: 157.38 milliseconds
+```
+#### Strategy: simple-iterator-position
+```
+Average execution time: 11,194.72 milliseconds
+```
+#### Strategy: aho-corasick-unique
+```
+Average execution time: 136.86 milliseconds
+```
+#### Strategy: aho-corasick-unique-processed
+```
+Average execution time: 135.85 milliseconds
+```
+#### Strategy: simple-iterator-unique
+```
+Average execution time: 122.75 milliseconds
 ```
 
 ### Product description taken from a Giant bike product page:
 
 This product text is 6,180 characters long:
 
+#### Strategy: aho-corasick-position
 ```
-Peak memory usage: 0,00 KB
-Average execition time: 1,56 ms
+Average execution time: 1.68 milliseconds
+```
+#### Strategy: simple-iterator-position
+```
+Average execution time: 1.30 milliseconds
+```
+#### Strategy: aho-corasick-unique
+```
+Average execution time: 1.60 milliseconds
+```
+#### Strategy: aho-corasick-unique-processed
+```
+Average execution time: 1.64 milliseconds
+```
+#### Strategy: simple-iterator-unique
+```
+Average execution time: 0.78 milliseconds
 ```
 
 ---
