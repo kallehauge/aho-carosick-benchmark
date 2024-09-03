@@ -83,27 +83,15 @@ You'd probably also want to add new keywords to the [KeywordLibrary](src/Keyword
 
 ### Example Output
 
-```
-$ php index.php mobydick 100
+````text
+$ php index.php aho-corasick-position mobydick 100
 
-... Lots of individual results ...
-Execution time: 135.23 milliseconds
-Execution time: 134.77 milliseconds
-Execution time: 135.80 milliseconds
-Execution time: 138.39 milliseconds
-Execution time: 137.18 milliseconds
-Execution time: 136.94 milliseconds
-Execution time: 137.01 milliseconds
-Execution time: 142.69 milliseconds
-Execution time: 135.55 milliseconds
-Execution time: 135.79 milliseconds
-Execution time: 136.07 milliseconds
-Execution time: 134.64 milliseconds
-Execution time: 151.99 milliseconds
----------------------------------------
-Memory usage: 4,096.00 KB
-Average execution time: 132.64 milliseconds
+#### Strategy: aho-corasick-position
 ```
+Memory usage: 2,048.00 KB
+Average execution time: 1.68 milliseconds
+```
+````
 
 ## Credit
 
