@@ -1,17 +1,18 @@
 {
-    "name": "kallehauge/aho-corasick",
-    "autoload": {
-        "psr-4": {
-            "Kallehauge\\AhoCorasick\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "André Kallehauge",
-            "email": "3846700+kallehauge@users.noreply.github.com"
-        }
-    ],
-    "require": {
-        "wikimedia/aho-corasick": "^2.0"
+  "name": "kallehauge/aho-corasick",
+  "autoload": {
+    "psr-4": {
+      "Kallehauge\\AhoCorasick\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "André Kallehauge",
+      "email": "3846700+kallehauge@users.noreply.github.com"
+    }
+  ],
+  "require": {
+    "wikimedia/aho-corasick": "^2.0",
+    "ext-mbstring": "*"
+  }
 }
