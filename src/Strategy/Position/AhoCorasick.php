@@ -1,13 +1,14 @@
 <?php
 
-namespace Kallehauge\AhoCorasick\MatchingStrategy;
+namespace Kallehauge\AhoCorasick\Strategy\Position;
 
 use AhoCorasick\MultiStringMatcher;
+use Kallehauge\AhoCorasick\Strategy\MatchingStrategy;
 
 /**
- * Class AhoCorasickStrategy.
+ * Class AhoCorasick.
  *
- * Our matches will be returned as an array of arrays that contains two keys:
+ * Will return an array of all (possibly duplicate) matches with their position in the text:
  *   0: The location of the match inside the text.
  *   1: The loose string match (e.g. the keyword "he" will return "herb").
  *
@@ -23,7 +24,7 @@ use AhoCorasick\MultiStringMatcher;
  *     ),
  *   );
  */
-class AhoCorasickStrategy implements MatchingStrategy {
+class AhoCorasick implements MatchingStrategy {
 	public function match( array $keywords, string $text ): array {
 		$matcher = new MultiStringMatcher( $keywords );
 

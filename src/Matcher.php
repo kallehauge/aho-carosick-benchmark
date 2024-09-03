@@ -2,10 +2,11 @@
 
 namespace Kallehauge\AhoCorasick;
 
-use Kallehauge\AhoCorasick\MatchingStrategy\AhoCorasickStrategy;
-use Kallehauge\AhoCorasick\MatchingStrategy\SimpleIteratorStrategy;
-use Kallehauge\AhoCorasick\MatchingStrategy\MatchingStrategy;
-use Kallehauge\AhoCorasick\MatchingStrategy\MatchingStrategyType;
+use Kallehauge\AhoCorasick\Strategy\MatchingStrategy;
+use Kallehauge\AhoCorasick\Strategy\MatchingStrategyType;
+use Kallehauge\AhoCorasick\Strategy\Position\AhoCorasick as AhoCorasickPosition;
+use Kallehauge\AhoCorasick\Strategy\Position\SimpleIterator as SimpleIteratorPosition;
+use Kallehauge\AhoCorasick\Strategy\Unique\SimpleIterator as SimpleIteratorUnique;
 
 class Matcher {
 	private MatchingStrategy $strategy;
@@ -18,8 +19,10 @@ class Matcher {
 		}
 
 		$this->strategy = match ( $enumStrategy ) {
-			MatchingStrategyType::AHO_CORASICK => new AhoCorasickStrategy(),
-			MatchingStrategyType::SIMPLE_ITERATOR => new SimpleIteratorStrategy(),
+			MatchingStrategyType::AHO_CORASICK => new AhoCorasickPosition(),
+			MatchingStrategyType::AHO_CORASICK_UNIQUE => new AhoCorasickPosition(),
+			MatchingStrategyType::SIMPLE_ITERATOR_POSITION => new SimpleIteratorPosition(),
+			MatchingStrategyType::SIMPLE_ITERATOR_UNIQUE => new SimpleIteratorUnique(),
 		};
 	}
 

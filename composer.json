@@ -11,8 +11,14 @@
       "email": "3846700+kallehauge@users.noreply.github.com"
     }
   ],
+  "scripts": {
+    "test": "phpunit tests"
+  },
   "require": {
     "wikimedia/aho-corasick": "^2.0",
     "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.3"
   }
 }
