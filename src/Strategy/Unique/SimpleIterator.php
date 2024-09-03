@@ -26,6 +26,6 @@ class SimpleIterator implements MatchingStrategy {
 			}
 		}
 
-		return array_unique( $matches );
+		return $matches;
 	}
 }
