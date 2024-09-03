@@ -2,7 +2,7 @@
 
 namespace Kallehauge\AhoCorasick\Strategy\Unique;
 
-use AhoCorasick\MultiStringMatcher;
+use Kallehauge\AhoCorasick\Algorithm\AhoCorasickUnique;
 use Kallehauge\AhoCorasick\Strategy\MatchingStrategy;
 
 /**
@@ -18,15 +18,7 @@ use Kallehauge\AhoCorasick\Strategy\MatchingStrategy;
  */
 class AhoCorasick implements MatchingStrategy {
 	public function match( array $keywords, string $text ): array {
-		$matcher = new MultiStringMatcher( $keywords );
-		$matches = $matcher->searchIn( mb_strtolower( $text ) );
-
-		$unique_matches = [];
-		foreach ( $matches as $match ) {
-			$keyword                    = $match[1];
-			$unique_matches[ $keyword ] = $keyword;
-		}
-
-		return $unique_matches;
+		$matcher = new AhoCorasickUnique( $keywords );
+		return $matcher->searchIn( mb_strtolower( $text ) );
 	}
 }

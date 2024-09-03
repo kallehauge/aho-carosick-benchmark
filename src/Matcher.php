@@ -7,6 +7,7 @@ use Kallehauge\AhoCorasick\Strategy\MatchingStrategyType;
 use Kallehauge\AhoCorasick\Strategy\Position\AhoCorasick as AhoCorasickPosition;
 use Kallehauge\AhoCorasick\Strategy\Position\SimpleIterator as SimpleIteratorPosition;
 use Kallehauge\AhoCorasick\Strategy\Unique\AhoCorasick as AhoCorasickUnique;
+use Kallehauge\AhoCorasick\Strategy\Unique\AhoCorasickProcessed as AhoCorasickUniqueProcessed;
 use Kallehauge\AhoCorasick\Strategy\Unique\SimpleIterator as SimpleIteratorUnique;
 
 class Matcher {
@@ -22,6 +23,7 @@ class Matcher {
 		$this->strategy = match ( $enumStrategy ) {
 			MatchingStrategyType::AHO_CORASICK_POSITION => new AhoCorasickPosition(),
 			MatchingStrategyType::AHO_CORASICK_UNIQUE => new AhoCorasickUnique(),
+			MatchingStrategyType::AHO_CORASICK_UNIQUE_PROCESSED => new AhoCorasickUniqueProcessed(),
 			MatchingStrategyType::SIMPLE_ITERATOR_POSITION => new SimpleIteratorPosition(),
 			MatchingStrategyType::SIMPLE_ITERATOR_UNIQUE => new SimpleIteratorUnique(),
 		};

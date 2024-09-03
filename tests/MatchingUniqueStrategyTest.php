@@ -3,6 +3,7 @@
 namespace Kallehauge\AhoCorasick\Tests;
 
 use Kallehauge\AhoCorasick\Strategy\Unique\AhoCorasick;
+use Kallehauge\AhoCorasick\Strategy\Unique\AhoCorasickProcessed;
 use Kallehauge\AhoCorasick\Strategy\Unique\SimpleIterator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -11,6 +12,7 @@ class MatchingUniqueStrategyTest extends TestCase {
 	public static function strategyClassProvider(): array {
 		return [
 			[ AhoCorasick::class ],
+			[ AhoCorasickProcessed::class ],
 			[ SimpleIterator::class ],
 		];
 	}
