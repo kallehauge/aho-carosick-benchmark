@@ -2,8 +2,10 @@
 
 TL;DR: I had to find a way to efficiently search for multiple possible strings in a large text (specifically, keywords inside amongst product titles and descriptions).
 
-So the mathematical challenge is an efficient way to address `O(n + m)` where `n` is the total length of keywords and `m` is the length of the text.
+So the mathematical challenge is an efficient way to address `O(n + m + z)` where `n` is the total length of keywords, `m` is the length of the text, and `z` number of matches found in the text.
 Theoretically the Aho-Corasick string matching algorithm should one of (or _the_?) most efficient way to do this, so I spun up this very superficial benchmark to see what to expect in PHP - and thereby also implied how well the Wikimedia implementation of Aho-Corasick performs.
+
+_You can find an "analysis" of these results here: [Native vs. Aho-Corasick in PHP: Why Simplicity Sometimes Wins](https://andrekh.com/?p=548)_
 
 ## Results
 
