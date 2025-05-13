@@ -7,6 +7,7 @@ class Report {
 	private int $start_memory_usage;
 	private float $end_time;
 	private int $end_memory_usage;
+	private int $keyword_count;
 
 	public function set_start_time( float $time ): void {
 		$this->start_time = $time;
@@ -24,6 +25,10 @@ class Report {
 		$this->end_memory_usage = $usage;
 	}
 
+	public function set_keyword_count( int $count ): void {
+		$this->keyword_count = $count;
+	}
+
 	public function get_execution_time_in_microseconds(): float {
 		return $this->end_time - $this->start_time;
 	}
@@ -34,5 +39,9 @@ class Report {
 
 	public function get_memory_usage(): int {
 		return $this->end_memory_usage - $this->start_memory_usage;
+	}
+
+	public function get_keyword_count(): int {
+		return $this->keyword_count;
 	}
 }

@@ -39,6 +39,7 @@ class Matcher {
 
 		$report->set_end_memory_usage( self::get_memory_usage() );
 		$report->set_end_time( self::get_microtime() );
+		$report->set_keyword_count( count( $keywords ) );
 
 		return $report;
 	}
